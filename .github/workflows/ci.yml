@@ -13,11 +13,11 @@ jobs:
     steps:
       # 1. Checkout do código
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # 2. Setup do Node.js
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
 
@@ -32,7 +32,7 @@ jobs:
       # 5. Upload de artefatos (screenshots e vídeos em caso de falha)
       - name: Upload Cypress artifacts
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cypress-artifacts
           path: |
