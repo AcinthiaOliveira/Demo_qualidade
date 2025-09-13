@@ -14,6 +14,12 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
+
+        - name: Clear cache
+          run: rm -rf node_modules
+        - name: Install dependencies
+          run: npm install
+
         - name: Checkout code teste
           uses: actions/checkout@v4
 
@@ -34,3 +40,8 @@ jobs:
             browser: chrome
             headless: false
             record: false
+            steps:
+                
+            -name: Install dependencies
+            run: npm install
+ 

@@ -3,7 +3,7 @@
 
 describe('template spec', () => {
   it('passes', () => {
-    cy.visit('https://restful-api.dev')
+    cy.visit('https://www.renner.com.br/')
   
   })
 })
