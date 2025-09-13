@@ -8,10 +8,9 @@ on:
         branches:
             - main
     schedule:
-        - cron: '0 19 * * 2' # Executa semanalmente aos domingos à meia-noite
+        - cron: '0 0 * * 1' # Executa semanalmente as segundas-feiras à meia-noite
 jobs:
     E2E-tests:
-    #cypress-run:    
         runs-on: ubuntu-latest
 
         steps:
@@ -33,4 +32,5 @@ jobs:
             wait-on: 'http://localhost:3000'
             wait-on-timeout: 60 # Tempo máximo de espera em segundos
             browser: chrome
-            headless: true
+            headless: false
+            record: false
