@@ -15,11 +15,6 @@ jobs:
 
         steps:
 
-        - name: Clear cache
-          run: rm -rf node_modules
-        - name: Install dependencies
-          run: npm install
-
         - name: Checkout code teste
           uses: actions/checkout@v4
 
