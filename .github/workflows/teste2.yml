@@ -1,37 +1,28 @@
 name: Teste E2E - cypress
 
 on:
-    push:
-        branches:
-            - main
-    pull_request:
-        branches:
-            - main
-    schedule:
-        - cron: '0 0 * * 1' # Executa semanalmente as segundas-feiras à meia-noite
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
-    E2E-tests:
-        runs-on: ubuntu-latest
+  E2E-tests:
+    runs-on: ubuntu-latest
 
-        steps:
+    steps:
+      - name: Checkout code teste
+        uses: actions/checkout@v4
 
-        - name: Checkout code teste
-          uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
 
-        - name: Setup Node.js
-          uses: actions/setup-node@v4
-          with:
-            node-version: '18'
+      - name: Install dependencies
+        run: npm install
 
-        - name: Install dependencies
-          run: npm install
-
-        - name: Run Cypress tests
-          uses: cypress-io/github-action@v6
-          with:
-            start: npm start
-            wait-on: 'http://localhost:3000'
-            wait-on-timeout: 60 # Tempo máximo de espera em segundos
-            browser: chrome
-            record: false
- 
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v6
