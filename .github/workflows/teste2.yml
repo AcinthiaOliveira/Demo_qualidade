@@ -33,10 +33,5 @@ jobs:
             wait-on: 'http://localhost:3000'
             wait-on-timeout: 60 # Tempo máximo de espera em segundos
             browser: chrome
-            headless: false
             record: false
-            steps:
-                
-            -name: Install dependencies
-            run: npm install
  
