@@ -24,3 +24,6 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Dê permissão de execução para o Cypress
+        run: chmod +x ./node_modules/.bin/cypress
